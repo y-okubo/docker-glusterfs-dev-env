@@ -49,6 +49,6 @@ COPY ./hello.c /root/hello.c
 
 RUN mkdir -p /root/src/bin \
   && echo 'export GOROOT=/usr/local/go' >> /root/.bashrc \
-  && echo 'export GOPATH=/root/src' >> /root/.bashrc \
+  && echo 'export GOPATH=/root' >> /root/.bashrc \
   && echo 'export GOBIN=$GOPATH/bin' >> /root/.bashrc \
   && echo 'export PATH=$PATH:$GOROOT/bin:$GOBIN' >> /root/.bashrc
