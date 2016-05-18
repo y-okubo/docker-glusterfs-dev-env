@@ -47,8 +47,8 @@ RUN tar -C /usr/local -xzf go1.6.2.linux-amd64.tar.gz
 
 COPY ./hello.c /root/hello.c
 
-RUN mkdir -p /root/src/bin \
+RUN mkdir -p /root/go/bin \
   && echo 'export GOROOT=/usr/local/go' >> /root/.bashrc \
-  && echo 'export GOPATH=/root' >> /root/.bashrc \
-  && echo 'export GOBIN=$GOPATH/bin' >> /root/.bashrc \
+  && echo 'export GOPATH=/go/path' >> /root/.bashrc \
+  && echo 'export GOBIN=/go/bin' >> /root/.bashrc \
   && echo 'export PATH=$PATH:$GOROOT/bin:$GOBIN' >> /root/.bashrc

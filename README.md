@@ -1,3 +1,9 @@
+# Prepare
+```
+./bin/docker-machine-nfs.sh default --shared-folder=/Users
+```
+マウントが異常な場合はホスト側の NFS 再起動する
+
 # Server
 
 ## Build
@@ -28,8 +34,7 @@ $ docker build -t glusterfs-client client
 
 ## Run
 ```
-$ docker run --privileged -tid -p 20023:22 --link gfserver:server --hostname gfclient --name gfclient glusterfs-client
-$ docker run --privileged -tid -p 20023:22 -v /Users/y-okubo/src/github.com:/github.com --link gfserver:server --hostname gfclient --name gfclient glusterfs-client
+$ docker run --privileged -tid -p 20023:22 -p 8080:8080 -v /Users/y-okubo:/go/path --link gfserver:server --hostname gfclient --name gfclient glusterfs-client
 ```
 
 # Login
